@@ -1,0 +1,177 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Teachers' Day | Mr. Abhimanyu Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 50px 20px 20px;
+    }
+    .headline {
+      font-family: "Pacifico", cursive;
+      font-size: clamp(40px, 6vw, 70px);
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,.25);
+    }
+    .sub {
+      font-size: 20px;
+      color: #fffbe6;
+      margin-top: 10px;
+    }
+    .photo {
+      margin: 30px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card {
+      margin: 20px auto;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+    .card h2 {
+      font-family: "Pacifico", cursive;
+      color: #ff6f61;
+      margin-top: 0;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 22px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,.2);
+      cursor: pointer;
+    }
+    .cta:hover {
+      opacity: 0.9;
+    }
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #ffe6f2;
+      border-radius: 16px;
+      font-size: 16px;
+      color: #444;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    }
+    footer {
+      margin: 40px 0 20px;
+      font-size: 14px;
+      color: #fff;
+    }
+    /* Decorative confetti */
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    .confetti span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      opacity: 0.8;
+      animation: fall 6s linear infinite;
+    }
+    @keyframes fall {
+      0% {transform: translateY(-10px) rotate(0deg);}
+      100% {transform: translateY(100vh) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+  <div class="confetti"></div>
+  <header>
+    <h1 class="headline">Happy Teachers' Day 🎉</h1>
+    <p class="sub">To our mentor <strong>Mr. Abhimanyu Kumar</strong><br>With love from Class <strong>AIDS G</strong></p>
+    <div class="photo">
+      
+      <img src="https://uploads.onecompiler.io/43ventdz6/43vq95xm8/absir.jpeg" alt="Mr. Abhimanyu Kumar">
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Warm Wishes & Blessings 🌸</h2>
+      <p>
+        Thank you for guiding us with patience, wisdom, and heart. Your lessons go beyond the syllabus — you inspire us to think bigger, aim higher, and be kinder. 💕
+      </p>
+      <p>
+        May you always be blessed with happiness, health, and success in every walk of life. 🌟
+      </p>
+      <button class="cta" onclick="toggleMessage()">Click here to open our special message</button>
+      <div id="specialMessage" class="hidden-message">
+        <p>Dear Sir,</p>
+        <p>
+          On this Teachers’ Day, we want to let you know how deeply grateful we are for your constant support, motivation, and wisdom. You’ve been more than a teacher — a true mentor and guide. Your encouragement helps us believe in ourselves, and your lessons will stay with us forever. 💐
+        </p>
+        <p>With love and respect,<br><strong>Yatika on behalf of Class AIDS G</strong></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by Yatika on behalf of Class AIDS G</p>
+  </footer>
+
+  <script>
+    // Generate confetti dynamically
+    const confetti = document.querySelector('.confetti');
+    for (let i = 0; i < 50; i++) {
+      const span = document.createElement('span');
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.top = -10 + 'px';
+      span.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+      span.style.width = span.style.height = Math.random() * 8 + 6 + 'px';
+      span.style.animationDuration = Math.random() * 3 + 3 + 's';
+      span.style.animationDelay = Math.random() * 5 + 's';
+      confetti.appendChild(span);
+    }
+
+    // Toggle special message
+    function toggleMessage(){
+      const msg = document.getElementById('specialMessage');
+      if(msg.style.display === 'block'){
+        msg.style.display = 'none';
+      } else {
+        msg.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
